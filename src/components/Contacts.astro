@@ -22,9 +22,8 @@ import SectionTitle from './SectionTitle.astro';
             <span>_haeden_</span>
           </li>
           <li class="contact-item">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9 1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
             </svg>
             <a href="mailto:marzouki.adil1987@gmail.com">marzouki.adil1987@gmail.com</a>
           </li>
@@ -90,8 +89,15 @@ import SectionTitle from './SectionTitle.astro';
   .contact-item svg {
     width: 20px;
     height: 20px;
+    min-width: 20px;
+    flex-shrink: 0;
     color: var(--text-secondary);
   }
+
+  .contact-item a {
+    word-break: break-all;
+  }
+
 
   .contact-item a:hover {
     color: var(--text-primary);
@@ -104,8 +110,7 @@ import SectionTitle from './SectionTitle.astro';
     }
 
     .contacts-box {
-      width: 100%;
-      max-width: 300px;
+      width: fit-content;
       margin: 0 auto;
     }
   }
