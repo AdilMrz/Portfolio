@@ -75,10 +75,18 @@ button {
 }
 
 /* Container */
+/* Container */
 .container {
   max-width: var(--container-width);
-  margin: auto;
+  margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1rem;
+  }
 }
 
 /* Section Title */
