@@ -109,11 +109,88 @@
 
   @media (max-width: 768px) {
     .nav {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--bg-primary);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       display: none;
+      z-index: 999;
+    }
+
+    .nav.active {
+      display: flex;
+    }
+
+    .nav-list {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      font-size: 1.5rem;
     }
 
     .mobile-toggle {
       display: flex;
+      z-index: 1001;
+    }
+    
+    .mobile-toggle.active span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    
+    .mobile-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .mobile-toggle.active span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
     }
   }
 </style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const nav = document.querySelector('.nav');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    console.log('Mobile menu script loaded', { mobileToggle, nav });
+
+    if (mobileToggle && nav) {
+      mobileToggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent bubbling issues
+        console.log('Mobile toggle clicked'); // Debug log
+        mobileToggle.classList.toggle('active');
+        nav.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+      });
+
+      // Close menu when clicking a link
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileToggle.classList.remove('active');
+          nav.classList.remove('active');
+          document.body.classList.remove('no-scroll');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (nav.classList.contains('active') && 
+            !nav.contains(e.target) && 
+            !mobileToggle.contains(e.target)) {
+          mobileToggle.classList.remove('active');
+          nav.classList.remove('active');
+          document.body.classList.remove('no-scroll');
+        }
+      });
+    }
+  });
+</script>
