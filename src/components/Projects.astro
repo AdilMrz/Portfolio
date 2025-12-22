@@ -1,0 +1,88 @@
+---
+import SectionTitle from './SectionTitle.astro';
+import ProjectCard from './ProjectCard.astro';
+
+const projects = [
+  {
+    technologies: ['React Native', 'Expo'],
+    title: 'LocalOne Vault',
+    description: 'Application de gestion de stockage de photos',
+    liveUrl: 'https://apps.apple.com/us/app/localone-vault/id6748964835',
+    githubUrl: 'https://github.com/AdilMrz',
+    image: '/projects/localone-vault.png'
+  
+  },
+  {
+    technologies: ['React Native', 'Expo'],
+    title: 'LocalOne Video',
+    description: 'Application de gestion de stockage de vidéos',
+    liveUrl: 'https://apps.apple.com/us/app/localone-videovault/id6751680532',
+    githubUrl: 'https://github.com/AdilMrz',
+    image: '/projects/localone-video.png'
+  },
+  {
+    technologies: ['React Native', 'Expo'],
+    title: 'LocalOne Voice',
+    description: 'Application de gestion de stockage d\'audios',
+    liveUrl: 'https://apps.apple.com/us/app/localone-voicevault/id6751864523',
+    githubUrl: 'https://github.com/AdilMrz',
+    image: '/projects/localone-voice.png'
+  },
+  {
+    technologies: ['React Native', 'Expo'],
+    title: 'LocalOne Period & Cycle',
+    description: 'Application pour suivre vos cycles menstruels',
+    liveUrl: 'https://apps.apple.com/us/app/localone-period-cycle/id6749210144',
+    githubUrl: 'https://github.com/AdilMrz',
+    image: '/projects/localone-period.png'
+  }
+];
+---
+
+<section id="works" class="projects-section">
+  <div class="container">
+    <SectionTitle title="projects" viewAll={true} viewAllLink="#works" />
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <ProjectCard
+          technologies={project.technologies}
+          title={project.title}
+          description={project.description}
+          liveUrl={project.liveUrl}
+          githubUrl={project.githubUrl}
+          image={project.image}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-section {
+    padding: var(--section-padding);
+  }
+
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

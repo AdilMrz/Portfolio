@@ -1,0 +1,112 @@
+---
+import SectionTitle from './SectionTitle.astro';
+---
+
+<section id="contacts" class="contacts-section">
+  <div class="container">
+    <SectionTitle title="contacts" />
+    <div class="contacts-content">
+      <div class="contacts-text">
+        <p>
+          Je suis intéressé par les opportunités de freelance. Cependant, si vous avez d'autres
+          demandes ou questions, n'hésitez pas à me contacter
+        </p>
+      </div>
+      <div class="contacts-box">
+        <h3 class="contacts-box-title">Contactez moi</h3>
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.2 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09 0 .11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.22-1.33 5.03-2.65c.02-.01.03-.03.03-.05c.44-4.52-.6-9.67-4.34-13.63c-.01-.01-.02-.01-.03-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12z"></path>
+            </svg>
+            <span>_haeden_</span>
+          </li>
+          <li class="contact-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:marzouki.adil1987@gmail.com">marzouki.adil1987@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contacts-section {
+    padding: var(--section-padding);
+  }
+
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .contacts-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  .contacts-text {
+    max-width: 500px;
+  }
+
+  .contacts-text p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .contacts-box {
+    border: 1px solid var(--border);
+    padding: 1rem;
+  }
+
+  .contacts-box-title {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+  }
+
+  .contact-item svg {
+    width: 20px;
+    height: 20px;
+    color: var(--text-secondary);
+  }
+
+  .contact-item a:hover {
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 768px) {
+    .contacts-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .contacts-box {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+</style>

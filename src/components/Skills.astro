@@ -1,0 +1,148 @@
+---
+import SectionTitle from './SectionTitle.astro';
+
+const skillCategories = [
+  {
+    title: 'Languages',
+    skills: ['TypeScript', 'CSS', 'HTML', 'JavaScript']
+  },
+  {
+    title: 'Databases',
+    skills: ['Supabase']
+  },
+  {
+    title: 'Tools',
+    skills: ['VSCode', 'Git']
+  },
+  {
+    title: 'Frameworks',
+    skills: ['React', 'React Native']
+  }
+];
+---
+
+<section class="skills-section">
+  <div class="container">
+    <SectionTitle title="skills" />
+    <div class="skills-container">
+      <div class="skills-decoration">
+        <div class="decorative-square"></div>
+        <div class="dots-pattern">
+          {Array(25).fill(0).map(() => <div class="dot"></div>)}
+        </div>
+        <div class="decorative-square small"></div>
+        <div class="dots-pattern bottom">
+          {Array(25).fill(0).map(() => <div class="dot"></div>)}
+        </div>
+      </div>
+      <div class="skills-grid">
+        {skillCategories.map((category) => (
+          <div class="skill-box">
+            <h3 class="skill-title">{category.title}</h3>
+            <p class="skill-list">{category.skills.join(' ')}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-section {
+    padding: var(--section-padding);
+  }
+
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .skills-container {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+
+  .skills-decoration {
+    position: relative;
+    width: 200px;
+    flex-shrink: 0;
+  }
+
+  .decorative-square {
+    width: 86px;
+    height: 86px;
+    border: 1px solid var(--text-secondary);
+    position: absolute;
+  }
+
+  .decorative-square.small {
+    width: 52px;
+    height: 52px;
+    top: 140px;
+    left: 60px;
+  }
+
+  .dots-pattern {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    position: absolute;
+    top: 50px;
+    left: 100px;
+  }
+
+  .dots-pattern.bottom {
+    top: 180px;
+    left: 0;
+  }
+
+  .dot {
+    width: 4px;
+    height: 4px;
+    background-color: var(--text-secondary);
+    border-radius: 50%;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  .skill-box {
+    border: 1px solid var(--border);
+    min-width: 140px;
+  }
+
+  .skill-title {
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skill-list {
+    padding: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .skills-container {
+      flex-direction: column;
+    }
+
+    .skills-decoration {
+      display: none;
+    }
+
+    .skills-grid {
+      justify-content: center;
+    }
+  }
+</style>

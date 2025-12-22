@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Quote from '../components/Quote.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+import About from '../components/About.astro';
+import Contacts from '../components/Contacts.astro';
+import Footer from '../components/Footer.astro';
+import SocialSidebar from '../components/SocialSidebar.astro';
+---
+
+<Layout title="Adil Marzouki - QA Testeur et Front-end Développeur">
+  <Header />
+  <SocialSidebar />
+  <main>
+    <Hero />
+    <Quote />
+    <Projects />
+    <Skills />
+    <About />
+    <Contacts />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    padding-left: 60px;
+  }
+
+  @media (max-width: 1200px) {
+    main {
+      padding-left: 0;
+    }
+  }
+</style>

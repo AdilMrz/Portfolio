@@ -1,0 +1,119 @@
+---
+
+---
+
+<header class="header">
+  <div class="container">
+    <a href="/" class="logo">
+      <span class="logo-name">Adil</span>
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#home" class="nav-link"><span class="hash">#</span>acceuil</a></li>
+        <li><a href="#works" class="nav-link"><span class="hash">#</span>projets</a></li>
+        <li><a href="#about-me" class="nav-link"><span class="hash">#</span>à propos</a></li>
+        <li><a href="#contacts" class="nav-link"><span class="hash">#</span>contacts</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--bg-primary);
+    padding: 1rem 0;
+  }
+
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link .hash {
+    color: var(--accent);
+  }
+
+  .nav-link:hover {
+    color: var(--text-primary);
+  }
+
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .lang-switch:hover {
+    color: var(--text-primary);
+  }
+
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0.5rem;
+  }
+
+  .mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      display: none;
+    }
+
+    .mobile-toggle {
+      display: flex;
+    }
+  }
+</style>

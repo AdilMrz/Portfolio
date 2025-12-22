@@ -1,0 +1,74 @@
+---
+interface Props {
+  title: string;
+  viewAll?: boolean;
+  viewAllLink?: string;
+}
+
+const { title, viewAll = false, viewAllLink = '#' } = Astro.props;
+---
+
+<div class="section-header">
+  <div class="section-title">
+    <h2><span class="hash">#</span>{title}</h2>
+    <span class="line"></span>
+  </div>
+</div>
+
+<style>
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+  }
+
+  .hash {
+    color: var(--accent);
+  }
+
+  .line {
+    width: 300px;
+    height: 1px;
+    background-color: var(--accent);
+  }
+
+  .view-all {
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .view-all:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .line {
+      width: 150px;
+    }
+  }
+</style>
