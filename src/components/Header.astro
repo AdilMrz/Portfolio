@@ -4,9 +4,7 @@
 
 <header class="header">
   <div class="container">
-    <a href="./public/favicon.png" class="logo">
       <span class="logo-name">Adil</span>
-    </a>
     <nav class="nav">
       <ul class="nav-list">
         <li><a href="#home" class="nav-link"><span class="hash">#</span>acceuil</a></li>
@@ -41,6 +39,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
   }
 
   .logo {
@@ -80,31 +79,22 @@
     color: var(--text-primary);
   }
 
-  .lang-switch {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-
-  .lang-switch:hover {
-    color: var(--text-primary);
-  }
-
   .mobile-toggle {
     display: none;
     flex-direction: column;
     gap: 4px;
     padding: 0.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
   }
 
   .mobile-toggle span {
     display: block;
     width: 24px;
     height: 2px;
-    background-color: var(--text-secondary);
+    background-color: var(--text-primary);
   }
 
   @media (max-width: 768px) {
@@ -128,17 +118,16 @@
 
     .nav-list {
       flex-direction: column;
-      align-items: flex-start;
-      gap: 1.5rem;
+      align-items: center;
+      gap: 2rem;
     }
 
     .nav-link {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
 
     .mobile-toggle {
       display: flex;
-      z-index: 1001;
     }
     
     .mobile-toggle.active span:nth-child(1) {
