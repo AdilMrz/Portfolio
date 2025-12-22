@@ -1,15 +1,15 @@
 ---
-import SectionTitle from './SectionTitle.astro';
-import ProjectCard from './ProjectCard.astro';
+import ProjectCard from "./ProjectCard.astro";
+import SectionTitle from "./SectionTitle.astro";
 
-const projects = [
+  const projects = [
   {
     technologies: ['React Native', 'Expo'],
     title: 'LocalOne Vault',
     description: 'Application de gestion de stockage de photos',
     liveUrl: 'https://apps.apple.com/us/app/localone-vault/id6748964835',
     githubUrl: 'https://github.com/AdilMrz',
-    image: '/projects/localone-vault.png'
+    image: '/assets/localone-vault.png'
   
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     description: 'Application de gestion de stockage de vidéos',
     liveUrl: 'https://apps.apple.com/us/app/localone-videovault/id6751680532',
     githubUrl: 'https://github.com/AdilMrz',
-    image: '/projects/localone-video.png'
+    image: '/assets/localone-video.png'
   },
   {
     technologies: ['React Native', 'Expo'],
@@ -26,7 +26,7 @@ const projects = [
     description: 'Application de gestion de stockage d\'audios',
     liveUrl: 'https://apps.apple.com/us/app/localone-voicevault/id6751864523',
     githubUrl: 'https://github.com/AdilMrz',
-    image: '/projects/localone-voice.png'
+    image: '/assets/localone-voice.png'
   },
   {
     technologies: ['React Native', 'Expo'],
@@ -34,7 +34,15 @@ const projects = [
     description: 'Application pour suivre vos cycles menstruels',
     liveUrl: 'https://apps.apple.com/us/app/localone-period-cycle/id6749210144',
     githubUrl: 'https://github.com/AdilMrz',
-    image: '/projects/localone-period.png'
+    image: '/assets/localone-period.png'
+  },
+  {
+    technologies: ['Astro'],
+    title: 'Portfolio',
+    description: 'Portfolio web',
+    liveUrl: 'https://portfolio-rho-vert-31.vercel.app/',
+    githubUrl: 'https://github.com/AdilMrz/Portfolio',
+    image: '/assets/portfolio.svg'
   }
 ];
 ---

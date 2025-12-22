@@ -10,15 +10,14 @@ import SectionTitle from './SectionTitle.astro';
         <p>Salut! je suis Adil</p>
         <br>
         <p>
-          Je suis un développeur front-end et Qa testeur junior autodidacte basé à Meknes, Maroc.
-          Je peux développer des sites web responsives de zéro et les améliorer
+          Je suis un développeur web-mobile front-end et Qa testeur junior autodidacte basé à Meknes, Maroc.
+          Je peux développer des sites web et applications mobiles responsives de zéro et les améliorer
           en expériences utilisateur modernes.
         </p>
         <br>
         <p>
-          Transformer ma créativité et mon savoir-faire en sites web a été
-          mon passe-temps depuis plus d'un an. J'ai aidé divers clients à
-          établir leur présence en ligne. Je m'efforce toujours d'apprendre
+          Transformer ma créativité et mon savoir-faire en sites web et applications mobiles a été
+          mon passe-temps depuis plus d'un an. Je m'efforce toujours d'apprendre
           les technologies et les frameworks les plus récents.
         </p>
         <a href="#" class="btn read-more">En savoir plus -&gt;</a>
@@ -26,11 +25,9 @@ import SectionTitle from './SectionTitle.astro';
       <div class="about-image">
         <div class="image-wrapper">
           <div class="image-placeholder">
-            <img src="/projects/hero.png" alt="Adil Marzouki" style="width: 100%; height: 100%; object-fit: cover;" />
+            <img src="../assets/hero.png" alt="Adil Marzouki" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
-          <div class="dots-decoration">
-            {Array(25).fill(0).map(() => <div class="dot"></div>)}
-          </div>
+          
         </div>
       </div>
     </div>
@@ -38,54 +35,21 @@ import SectionTitle from './SectionTitle.astro';
 </section>
 
 <style>
-  .about-section {
-    padding: var(--section-padding);
-  }
-
-  .container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
   .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 2rem;
     align-items: center;
   }
 
   .about-text p {
+    margin-bottom: 1rem;
     color: var(--text-secondary);
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-
-  .read-more {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--accent);
-    color: var(--text-primary);
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: transparent;
-    margin-top: 1.5rem;
-  }
-
-  .read-more:hover {
-    background-color: var(--accent);
-    color: var(--bg-primary);
   }
 
   .about-image {
     display: flex;
-    justify-content: flex-end;
-  }
-
-  .image-wrapper {
-    position: relative;
+    justify-content: center;
   }
 
   .image-placeholder {
@@ -96,6 +60,13 @@ import SectionTitle from './SectionTitle.astro';
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    overflow: hidden;
+  }
+
+  .image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .image-placeholder svg {
