@@ -78,7 +78,7 @@ button {
 /* Container */
 .container {
   max-width: var(--container-width);
-  margin: 0 auto;
+  margin: auto;
   padding: 0 1.5rem;
   width: 100%;
 }
