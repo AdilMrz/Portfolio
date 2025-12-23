@@ -47,6 +47,9 @@ const { image, technologies, title, description, liveUrl, githubUrl } = Astro.pr
   .project-card {
     border: 1px solid var(--border);
     background: transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .project-image {
@@ -88,6 +91,9 @@ const { image, technologies, title, description, liveUrl, githubUrl } = Astro.pr
 
   .project-content {
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   .project-title {
@@ -101,6 +107,7 @@ const { image, technologies, title, description, liveUrl, githubUrl } = Astro.pr
     color: var(--text-secondary);
     margin-bottom: 1rem;
     font-size: 1rem;
+    flex-grow: 1;
     line-height: 1.5;
   }
 
