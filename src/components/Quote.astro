@@ -4,10 +4,18 @@
 
 <section class="quote-section">
   <div class="container">
-    <div class="quote-wrapper">
+    <div class="quote-wrapper quote-left">
       <blockquote class="quote">
         <span class="quote-mark">"</span>
         Supposing is a good , but finding out is better
+        <span class="quote-mark">"</span>
+      </blockquote>
+      <p class="quote-author">- Mark Twain</p>
+    </div>
+    <div class="quote-wrapper quote-right">
+      <blockquote class="quote">
+        <span class="quote-mark">"</span>
+        Continuous improvement is better than delayed perfection
         <span class="quote-mark">"</span>
       </blockquote>
       <p class="quote-author">- Mark Twain</p>
@@ -29,9 +37,23 @@
   .quote-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     max-width: 700px;
-    margin: 0 auto;
+  }
+
+  .quote-wrapper + .quote-wrapper {
+    margin-top: 2rem;
+  }
+
+  .quote-left {
+    align-items: flex-start;
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  .quote-right {
+    align-items: flex-end;
+    margin-left: auto;
+    margin-right: 0;
   }
 
   .quote {
@@ -54,7 +76,6 @@
     padding: 1rem 1.5rem;
     color: var(--text-secondary);
     font-size: 1.25rem;
-    align-self: flex-end;
   }
 
   @media (max-width: 768px) {
